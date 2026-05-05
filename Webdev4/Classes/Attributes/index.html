@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-ATTRIBUTES</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        line-height: 1.6;
+    }
+    h1, h2 {
+        color: #333;
+    }
+
+    #topic {
+        text-align: center;
+        margin-bottom: 50px;
+        background-color: blue;
+        color:azure;
+    }
+
+    .description {
+        font-size: 1.2em;
+        color: #555;
+    }
+    ul {
+        list-style-type: square;
+        margin-left: 20px;
+    }
+    li {
+        margin-bottom: 10px;
+    }
+</style>
+<body style="background-color: cadetblue;">
+    <h1 id="topic">HTML Attributes</h1>
+    <p class="description">HTML attributes provide additional information about HTML elements. They are always included in the opening tag and usually come in name/value pairs like: name="value".</p>
+    <h2 id="common-attributes">Common HTML Attributes</h2>
+    <ul>
+        <li><strong>id</strong>: Specifies a unique id for an element.</li>
+        <li><strong>class</strong>: Specifies one or more class names for an element (used for CSS and JavaScript).</li>
+        <li><strong>style</strong>: Specifies an inline CSS style for an element.</li>
+        <li><strong>title</strong>: Provides additional information about an element (displayed as a tooltip).</li>
+        <li><strong>href</strong>: Specifies the URL of a link (used in <code>&lt;a&gt;</code> elements).</li>
+        <li><strong>src</strong>: Specifies the URL of an image (used in <code>&lt;img&gt;</code> elements).</li>
+        <li><strong>alt</strong>: Provides alternative text for an image (used in <code>&lt;img&gt;</code> elements).</li>
+        <li><strong>value</strong>: Specifies the value of an input element (used in <code>&lt;input&gt;</code> elements).</li>
+        <li><strong>name</strong>: Specifies the name of an input element (used in <code>&lt;input&gt;</code> elements).</li>
+    </ul>
+    <h2 id="global-attributes">Global Attributes</h2>
+    <p>Global attributes can be used on any HTML element. Some common global attributes include:</p>
+    <ul>
+        <li><strong>accesskey</strong>: Specifies a shortcut key to activate/focus an element.</li>
+        <li><strong>contenteditable</strong>: Specifies whether the content of an element is editable.</li>
+        <li><strong>data-*</strong>: Used to store custom data private to the page or application.</li>
+        <li><strong>dir</strong>: Specifies the text direction for the content in an element (ltr for left-to-right, rtl for right-to-left).</li>
+        <li><strong>draggable</strong>: Specifies whether an element is draggable.</li>
+        <li><strong>hidden</strong>: Specifies that an element is not yet, or is no longer, relevant.</li>
+        <li><strong>lang</strong>: Specifies the language of the element's content.</li>
+        <li><strong>spellcheck</strong>: Specifies whether the element is to have its spelling and grammar checked.</li>
+        <li><strong>tabindex</strong>: Specifies the tab order of an element.</li>
+        <li><strong>title</strong>: Provides additional information about an element (displayed as a tooltip).</li>
+    </ul>
+    <h2 id="event-attributes">Event Attributes</h2>
+    <p>Event attributes are used to specify JavaScript code to be executed when an event occurs. Some common event attributes include:</p>
+    <ul>
+        <li><strong>onclick</strong>: Executes JavaScript code when an element is clicked.</li>
+        <li><strong>onmouseover</strong>: Executes JavaScript code when the mouse pointer moves over an element.</li>
+        <li><strong>onmouseout</strong>: Executes JavaScript code when the mouse pointer moves out of an element.</li>
+        <li><strong>onchange</strong>: Executes JavaScript code when the value of an element changes.</li>
+        <li><strong>onkeydown</strong>: Executes JavaScript code when a key is pressed down.</li>
+        <li><strong>onkeyup</strong>: Executes JavaScript code when a key is released.</li>
+        <li><strong>onsubmit</strong>: Executes JavaScript code when a form is submitted.</li>
+        <li><strong>onload</strong>: Executes JavaScript code when a page or an image has finished loading.</li>
+        <li><strong>onunload</strong>: Executes JavaScript code when a page is unloaded.</li>
+        <li><strong>onresize</strong>: Executes JavaScript code when the browser window is resized.</li>
+    </ul>
+    <a href="https://example.com" title="Click to visit the Example website">Visit Example</a>
+
+    <div>
+        <h3>HTML Form Attributes</h3>
+        <ul>
+            <li><strong>action</strong>: Specifies where to send the form data when a form is submitted.</li>
+            <li><strong>method</strong>: Specifies the HTTP method to use when sending form data (GET or POST).</li>
+            <li><strong>enctype</strong>: Specifies how the form data should be encoded when submitting it to the server (used with POST method).</li>
+            <li><strong>autocomplete</strong>: Specifies whether the browser should autocomplete the form fields.</li>
+            <li><strong>novalidate</strong>: Specifies that the form should not be validated when submitted.</li>
+            <li><strong>target</strong>: Specifies where to display the response after submitting the form (e.g., _blank, _self, _parent, _top).</li>
+        </ul>
+        <form action="submit_form.php" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="user_name">
+        <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <button type="button" onclick="alert('Button clicked!')">Click Me</button>
+
+
+
+</body>
+</html>

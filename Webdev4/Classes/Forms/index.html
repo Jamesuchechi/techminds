@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-Forms</title>
+    <link rel="stylesheet" href="../CSS/styles.css">
+</head>
+<body>
+    <h1>Understanding HTML Forms</h1>
+    <p style="color: brown;">      
+       Forms are essential for gathering user input on a webpage, such as login credentials, search queries, or feedback.<br>
+
+       HTML forms are made up of various input elements that collect different types of data. Let's dive into how to structure forms and work with input elements.
+    </p>
+
+    <h2>STRUCTURES OF A FORM</h2>
+    <p>
+        A form in HTML is created using the `form` tag, which acts as a container for all input elements.<br> Forms usually include input fields, labels, buttons, and other elements.
+    </p>
+    <p>
+        
+      -`action`: Specifies the URL where the form data will be sent for processing.<br>
+      -`method`: Specifies the HTTP method to use when sending the form data (`GET` or `POST`).
+
+    </p>
+
+    <h3>INPUT FORM</h3>
+    <p>
+        <h4>Types of `input`</h4>
+            - `type="text"`: Collects plain text input.<br>
+            - `type="password"`: Hides the input text (useful for passwords).<br>
+            - `type="email"`: Used for email addresses and automatically validates the format.<br>
+            - `type="number"`: Restricts the input to numerical values.<br>
+            - `type="submit"`: Creates a submit button for the form.
+    </p>
+
+    <form action="/submit" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
+
+        <label for="number">Number:</label>
+        <input type="number" id="number" name="number" placeholder="Enter your registration number number" required><br>
+  
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required><br>
+  
+        <input type="submit" value="Login">
+    </form>
+
+    <h3>textarea Tag</h3>
+    <p>
+        The `textarea` element is used for multi-line text input, like comments or messages.
+    </p>
+
+    <form action="/submit" method="POST">
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="4" cols="50" placeholder="Enter your message here"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <!--comment-->
+    <form action="/submit" method="POST">
+        <label for="comment">Comment:</label><br>
+        <textarea id="comment" name="comment" rows="2" cols="30" placeholder="Enter your comment here"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h3>SELECT TAG</h3>
+    <p>
+        The select tag is used to create a dropdown menu from which users can choose an option
+    </p>
+    <p>We use "option" to create or define individual items within the dropdown</p>
+
+    <form action="/submit" method="POST">
+        <label for="country">Choose your country:</label>
+        <select id="country" name="country" required>
+            <option value="us">United States</option>
+            <option value="uk">United Kingdom</option>
+            <option value="ca">Canada</option>
+            <option value="au">Australia</option>
+            <option value="ng">NIgeria</option>
+        </select><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <h4>BUTTON TAG</h4>
+    <p> The button element is often used for submitting forms or triggering javascript actions</p>
+    <p>
+        - `type="submit"`: Submits the form.<br>
+        - `type="button"`: Used for custom actions, like running JavaScript.
+    </p>
+
+    <form action="/submit" method="POST">
+        <button type="submit">Submit Form</button>
+    </form>
+
+    <h3>Readonly and Disabled</h3>
+    <form>
+        <input type="text" value="example usage" readonly><br>
+        <input type="text" value="Disabled" disabled>
+    </form>
+
+    <h3>Grouping form TAGs</h3>
+    <h4>Fieldset TAGS</h4>
+    <p> Often used with `legend` to provide a caption.</p>
+    <p>- Used to group related form elements and create a box around them.</p>
+
+    <form action="/submit" method="POST">
+        <fieldset>
+            <legend>Personal Information</legend>
+    
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </fieldset>
+
+        <input type="submit" value="Submit">
+    </form> 
+
+    <div class="container">
+        <div class="box">Nested Box 1</div>
+        <div class="box">Nested Box 2</div>
+        <div class="box">Nested Box 3</div>
+        <div class="box">Nested Box 4</div>
+        <div class="box">Nested Box 5</div>
+    </div>
+
+</body>
+</html>
