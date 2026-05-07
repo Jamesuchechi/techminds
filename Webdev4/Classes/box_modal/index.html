@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>CSS Box Model Masterclass</title>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+
+    <header class="hero">
+        <div class="hero-content">
+            <p class="tag">Week 2 • CSS Layout Basics</p>
+
+            <h1>Understanding the CSS Box Model</h1>
+
+            <p class="hero-text">
+                Learn how margins, borders, padding, positioning, display properties,
+                shadows, and overflow work together to create beautiful layouts.
+            </p>
+
+            <a href="#playground" class="button">
+                Start Exploring
+            </a>
+        </div>
+    </header>
+
+
+    <main class="container">
+
+
+
+        <section class="card">
+            <h2>1. The Box Model</h2>
+
+            <p>
+                Every HTML element is treated like a rectangular box.
+                The box model controls spacing inside and outside the element.
+            </p>
+
+            <div class="box-model-demo">
+
+                <div class="margin-layer">
+                    Margin
+
+                    <div class="border-layer">
+                        Border
+
+                        <div class="padding-layer">
+                            Padding
+
+                            <div class="content-layer">
+                                Content
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section class="card">
+            <h2>2. Display Property</h2>
+
+            <p>
+                The display property controls how elements behave in the layout.
+            </p>
+
+            <div class="display-demo">
+
+                <div class="display-box block">
+                    Block
+                </div>
+
+                <span class="display-box inline">
+                    Inline
+                </span>
+
+                <span class="display-box inline">
+                    Inline
+                </span>
+
+                <div class="display-box inline-block">
+                    Inline-Block
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="card">
+            <h2>3. CSS Positioning</h2>
+
+            <p>
+                Positioning allows elements to move relative to themselves,
+                their parent, or the viewport.
+            </p>
+
+            <div class="position-playground">
+
+                <div class="position-box static-box">
+                    Static
+                </div>
+
+                <div class="position-box relative-box">
+                    Relative
+                </div>
+
+                <div class="position-box absolute-box">
+                    Absolute
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="card">
+            <h2>4. Overflow</h2>
+
+            <div class="overflow-container">
+
+                <div class="overflow-box hidden-box">
+                    <h3>Overflow: Hidden</h3>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Accusantium rerum expedita quaerat rem officiis vitae
+                        laboriosam harum veniam. Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit.
+                    </p>
+                </div>
+
+                <div class="overflow-box scroll-box">
+                    <h3>Overflow: Scroll</h3>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Accusantium rerum expedita quaerat rem officiis vitae
+                        laboriosam harum veniam. Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit.
+                    </p>
+                </div>
+
+                <div class="overflow-box auto-box">
+                    <h3>Overflow: Auto</h3>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Accusantium rerum expedita quaerat rem officiis vitae
+                        laboriosam harum veniam. Lorem ipsum dolor sit amet,
+                        consectetur adipisicing elit.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section class="card">
+            <h2>5. Borders, Radius & Shadows</h2>
+
+            <div class="effects-grid">
+
+                <div class="effect-card sharp">
+                    <h3>Sharp Border</h3>
+                    <p>Basic border styling.</p>
+                </div>
+
+                <div class="effect-card rounded">
+                    <h3>Rounded Corners</h3>
+                    <p>Using border-radius.</p>
+                </div>
+
+                <div class="effect-card shadow">
+                    <h3>Box Shadow</h3>
+                    <p>Creating depth with shadows.</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="card" id="playground">
+
+            <h2>6. Interactive Modal Project</h2>
+
+            <p>
+                This modal demonstrates positioning, overlays, spacing,
+                shadows, and layout structure — all without JavaScript.
+            </p>
+
+            <label for="modalToggle" class="button">
+                Open Modal
+            </label>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- Hidden checkbox controls modal -->
+    <input type="checkbox" id="modalToggle" class="modal-toggle" hidden />
+
+    <!-- Overlay -->
+    <div class="modal-overlay">
+
+        <!-- Modal Box -->
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+            <header class="modal-header">
+
+                <h2 id="modalTitle">
+                    CSS Box Model Complete Demo
+                </h2>
+
+                <label for="modalToggle"
+                    class="close-button"
+                    aria-label="Close modal">
+
+                    ×
+
+                </label>
+
+            </header>
+
+            <div class="modal-content">
+
+                <p>
+                    Congratulations! You are now combining:
+                </p>
+
+                <ul>
+                    <li>Box Model</li>
+                    <li>Padding & Margin</li>
+                    <li>Borders & Shadows</li>
+                    <li>Display Properties</li>
+                    <li>Positioning</li>
+                    <li>Overflow Handling</li>
+                </ul>
+
+                <p>
+                    This is how real modern interfaces are built.
+                </p>
+
+            </div>
+
+            <footer class="modal-footer">
+
+                <label for="modalToggle" class="button">
+                    Close Modal
+                </label>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+
+    <footer class="page-footer">
+
+        <p>
+            Built for teaching the CSS Box Model & Layout Basics
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

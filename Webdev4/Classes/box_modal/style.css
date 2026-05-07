@@ -1,0 +1,296 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #111110e8;
+    color: #b6a8a8;
+    line-height: 1.6;
+}
+
+
+.hero {
+    background-color: #0e3785;
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.hero text {
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+.tag {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero a {
+    display: inline-block;
+    padding: 8px 10px;
+    background-color: #f04e23;
+    color: white;
+    text-decoration: none;
+    border-radius: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.hero a:hover {
+    background-color: black;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+.card {
+    background-color: #f04e23;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(10, 16, 104, 0.925);
+    
+}
+
+.box-model-demo {
+    margin-top: 30px;
+}
+
+.margin-layer {
+    background-color: #0e3785;
+    padding: 40px;
+    border: 8px solid #f04e23;
+    border-radius: 40px;
+}
+
+.border-layer {
+    background-color: #f04e23;
+    padding: 40px;
+    border: 8px solid #0e3785;
+    border-radius: 40px;
+}
+
+.padding-layer {
+    background-color: #0e3785;
+    padding: 40px;
+    border: 8px solid #f04e23;
+    border-radius: 40px;
+}
+
+.content-layer {
+    background-color: #f04e23;
+    padding: 40px;
+    border: 8px solid #0e3785;
+    border-radius: 40px;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.display-demo {
+    margin-top: 20px;
+
+}
+
+.display-box {
+    background-color: #0e3785;
+    color: white;
+    padding:20px;
+    margin: 20px;
+}
+
+.block {
+    display: block;
+}
+
+.inline {
+    display:inline;
+}
+
+.inline-block {
+    display: inline-block;
+} 
+
+
+.position-playground{
+    position: relative;
+    height: 500px;
+    background-color: black;
+    margin-top: 20px;
+}
+
+.position-box{
+    padding: 40px;
+    color: #f04e23;
+    width: 200px;
+}
+
+.static-box{
+    background-color: #111827;
+
+}
+
+.relative-box{
+    background-color: #111827;
+    position: relative;
+    top: 50px;
+    left: 50px;
+}
+
+.absolute-box{
+    background-color: #111827;
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+
+ 
+
+.overflow-container{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.overflow-box{
+    width: 300px;
+    height: 150px;
+    padding: 20px;
+    border: 2px solid #111827;
+    background-color: black;
+}
+
+.hidden-box{
+    overflow: hidden;
+}
+
+.scroll-box{
+    overflow: scroll;
+}
+
+.auto-box{
+    overflow: auto;
+}
+
+
+
+.effects-grid{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    margin-top: 20px;
+}
+
+.effect-card{
+    width: 250px;
+
+    padding: 30px;
+
+    background-color: white;
+}
+
+.sharp{
+    border: 3px solid #111;
+}
+
+.rounded{
+    border: 3px solid #3b82f6;
+    border-radius: 20px;
+}
+
+.shadow{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+
+
+.button{
+    display: inline-block;
+
+    background-color: #111827;
+    color: white;
+
+    padding: 14px 24px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    margin-top: 20px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-overlay{
+    position: fixed;
+
+    inset: 0;
+
+    background-color: rgba(0,0,0,0.6);
+
+    display: none;
+
+    padding: 20px;
+}
+
+.modal-box{
+    background-color: white;
+
+    max-width: 600px;
+
+    margin: 100px auto;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Show modal when checkbox checked */
+
+.modal-toggle:checked + .modal-overlay{
+    display: block;
+}
+
+.modal-header{
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.close-button{
+    font-size: 2rem;
+
+    cursor: pointer;
+}
