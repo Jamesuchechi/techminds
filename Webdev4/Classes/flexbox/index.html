@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Teaching Structure</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Modern Layout (Flexbox)</h1>
+    <p class="head">
+      Goal: Learn how to build responsive layouts using Flexbox.
+    </p>
+  </header>
+
+  <hr>
+
+  <!-- INTRODUCTION -->
+
+  <section>
+    <h2>What is Flexbox?</h2>
+
+    <p>
+      Flexbox is a one-dimensional layout system used to arrange items
+      in rows or columns.
+    </p>
+
+    <p>
+      Flexbox works with:
+    </p>
+
+    <ul>
+      <li>Flex Container (Parent)</li>
+      <li>Flex Items (Children)</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <!-- DISPLAY FLEX -->
+
+  <section>
+    <h2>1. display: flex</h2>
+
+    <p>
+      The parent container becomes flexible and arranges its children automatically.
+    </p>
+
+    <div class="container">
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+    </div>
+
+    <pre>
+.container {
+  display: flex;
+}
+    </pre>
+  </section>
+
+  <hr>
+
+  <!-- FLEX DIRECTION -->
+
+  <section>
+    <h2>2. flex-direction</h2>
+
+    <p>
+      Controls the direction of the flex items.
+    </p>
+
+    <h3>Row Direction</h3>
+
+    <div class="container row">
+      <div class="box">HTML</div>
+      <div class="box">CSS</div>
+      <div class="box">JavaScript</div>
+    </div>
+
+    <pre>
+.container {
+  display: flex;
+  flex-direction: row;
+}
+    </pre>
+
+    <h3>Column Direction</h3>
+
+    <div class="container column">
+      <div class="box">HTML</div>
+      <div class="box">CSS</div>
+      <div class="box">JavaScript</div>
+    </div>
+
+    <pre>
+.container {
+  display: flex;
+  flex-direction: column;
+}
+    </pre>
+  </section>
+
+  <hr>
+
+
+  <!-- JUSTIFY CONTENT -->
+
+  <section>
+    <h2>3. justify-content</h2>
+
+    <p>
+      Aligns items along the main axis (horizontal in row direction).
+    </p>
+
+    <h3>space-between</h3>
+
+    <div class="container space-between">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+    </div>
+
+    <pre>
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+    </pre>
+
+    <h3>center</h3>
+
+    <div class="container justify-center">
+      <div class="box">A</div>
+      <div class="box">B</div>
+      <div class="box">C</div>
+      <div class="box">D</div>
+    </div>
+
+    <pre>
+.container {
+  display: flex;
+  justify-content: center;
+}
+    </pre>
+  </section>
+
+  <hr>
+
+  <!-- ALIGN ITEMS -->
+
+  <section>
+    <h2>4. align-items</h2>
+
+    <p>
+      Aligns items along the cross axis (vertical in row direction).
+    </p>
+
+    <div class="container align-items">
+      <div class="box">Small Box</div>
+      <div class="box">Tall Box</div>
+      <div class="box">Medium Box</div>
+    </div>
+
+    <pre>
+.container {
+  display: flex;
+  align-items: center;
+}
+    </pre>
+  </section>
+
+  <hr>
+
+  <!-- GAP -->
+
+  <section>
+    <h2>5. gap</h2>
+
+    <p>
+      Adds spacing between flex items.
+    </p>
+
+    <div class="container gap">
+      <div class="box">Card 1</div>
+      <div class="box">Card 2</div>
+      <div class="box">Card 3</div>
+    </div>
+
+    <pre>
+.container {
+  display: flex;
+  gap: 20px;
+}
+    </pre>
+  </section>
+
+  <hr>
+
+  <!-- FLEX WRAP -->
+  
+
+  <section>
+    <h2>6. flex-wrap</h2>
+
+    <p>
+      Allows items to move to the next line if there is not enough space.
+    </p>
+
+        <div class="container flex-wrap">
+            <div class="box">Item 1</div>
+            <div class="box">Item 2</div>
+            <div class="box">Item 3</div>
+            <div class="box">Item 4</div>
+            <div class="box">Item 5</div>
+            <div class="box">Item 6</div>
+            <div class="box">Item 7</div>
+            <div class="box">Item 8</div>
+            <div class="box">Item 9</div>
+            <div class="box">Item 10</div>
+            <div class="box">Item 11</div>
+            <div class="box">Item 12</div>
+        </div>
+
+    <pre>
+        .container {
+        display: flex;
+        flex-wrap: wrap;
+        }
+    </pre>
+  </section>
+
+  <hr>
+
+  
+  <!-- ALIGN CONTENT -->
+
+
+  <section>
+    <h2>7. align-content</h2>
+
+    <p>
+      Controls spacing between rows when wrapping occurs.
+    </p>
+
+    <div class="container align-content">
+      <div class="box">Box 1</div>
+      <div class="box">Box 2</div>
+      <div class="box">Box 3</div>
+      <div class="box">Box 4</div>
+      <div class="box">Box 5</div>
+      <div class="box">Box 6</div>
+    </div>
+
+    <pre>
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+}
+    </pre>
+  </section>
+
+  <hr>
+
+  
+  <!-- FLEX GROW -->
+  
+
+  <section>
+    <h2>8. flex-grow</h2>
+
+    <p>
+      Allows items to grow and take available space.
+    </p>
+
+    <div class="container flex-grow">
+      <div class="box">Grow 1</div>
+      <div class="box">Grow 2</div>
+      <div class="box">Grow 3</div>
+    </div>
+
+    <pre>
+.box1 {
+  flex-grow: 1;
+}
+
+.box2 {
+  flex-grow: 2;
+}
+
+.box3 {
+  flex-grow: 3;
+}
+    </pre>
+  </section>
+
+  <hr>
+
+  <!-- FLEX SHRINK -->
+  
+
+  <section>
+    <h2>9. flex-shrink</h2>
+
+    <p>
+      Controls how items shrink when space becomes small.
+    </p>
+
+    <div class="container flex-shrink">
+      <div class="box">Shrink 1</div>
+      <div class="box">Shrink 2</div>
+      <div class="box">Shrink 3</div>
+    </div>
+
+    <pre>
+.box1 {
+  flex-shrink: 1;
+}
+
+.box2 {
+  flex-shrink: 2;
+}
+
+.box3 {
+  flex-shrink: 3;
+}
+    </pre>
+  </section>
+
+  <hr>
+
+  
+  <!-- FLEX BASIS -->
+
+  <section>
+    <h2>10. flex-basis</h2>
+
+    <p>
+      Defines the initial size of a flex item.
+    </p>
+
+    <div class="container flex-basis">
+      <div class="box">100px</div>
+      <div class="box">200px</div>
+      <div class="box">300px</div>
+    </div>
+
+    <pre>
+.box1 {
+  flex-basis: 100px;
+}
+
+.box2 {
+  flex-basis: 200px;
+}
+
+.box3 {
+  flex-basis: 300px;
+}
+    </pre>
+  </section>
+
+  <hr>
+
+  
+  <!-- SUMMARY -->
+
+  <section>
+    <h2>📘 Summary</h2>
+
+    <table border="1" cellpadding="10">
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>display: flex</td>
+          <td>Creates a flex container</td>
+        </tr>
+
+        <tr>
+          <td>flex-direction</td>
+          <td>Sets row or column layout</td>
+        </tr>
+
+        <tr>
+          <td>justify-content</td>
+          <td>Aligns items horizontally</td>
+        </tr>
+
+        <tr>
+          <td>align-items</td>
+          <td>Aligns items vertically</td>
+        </tr>
+
+        <tr>
+          <td>gap</td>
+          <td>Adds spacing between items</td>
+        </tr>
+
+        <tr>
+          <td>flex-wrap</td>
+          <td>Allows wrapping</td>
+        </tr>
+
+        <tr>
+          <td>align-content</td>
+          <td>Aligns wrapped rows</td>
+        </tr>
+
+        <tr>
+          <td>flex-grow</td>
+          <td>Controls growing</td>
+        </tr>
+
+        <tr>
+          <td>flex-shrink</td>
+          <td>Controls shrinking</td>
+        </tr>
+
+        <tr>
+          <td>flex-basis</td>
+          <td>Sets initial size</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</body>
+</html>

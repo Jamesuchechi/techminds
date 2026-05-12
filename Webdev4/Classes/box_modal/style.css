@@ -204,11 +204,11 @@ body {
 }
 
 .effect-card{
-    width: 250px;
+    width: 300px;
 
-    padding: 30px;
+    padding: 40px;
 
-    background-color: white;
+    background-color: rgb(88, 12, 12);
 }
 
 .sharp{
@@ -217,11 +217,11 @@ body {
 
 .rounded{
     border: 3px solid #3b82f6;
-    border-radius: 20px;
+    border-radius: 30px;
 }
 
 .shadow{
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(11, 134, 7, 0.897);
 }
 
 
@@ -243,10 +243,6 @@ body {
     margin-top: 20px;
 }
 
-/* =========================
-   MODAL
-========================= */
-
 .modal-overlay{
     position: fixed;
 
@@ -260,7 +256,7 @@ body {
 }
 
 .modal-box{
-    background-color: white;
+    background-color: rgb(206, 26, 26);
 
     max-width: 600px;
 
@@ -294,3 +290,4 @@ body {
 
     cursor: pointer;
 }
+
