@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Layout Techniques - Grid & Flexbox</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+
+  <header>
+    <h1>CSS Layout Techniques</h1>
+    <p>
+      Understanding Flexbox and Grid Layout Systems
+    </p>
+  </header>
+
+  <hr />
+
+
+  <section>
+    <h2>Topics for Today</h2>
+
+    <ol>
+      <li>Grid Layout Introduction</li>
+      <li>Grid Core Properties</li>
+      <li>Advanced Grid Techniques</li>
+      <li>Flexbox Navigation Bar</li>
+      <li>Responsive Card Layout</li>
+      <li>Dashboard Layout using Grid</li>
+    </ol>
+  </section>
+
+  <hr />
+
+  <section>
+    <h2>1. CSS Grid Layout</h2>
+
+    <p>
+      CSS Grid is a two-dimensional layout system that works with rows and columns.
+    </p>
+
+    <h3>Important Grid Properties</h3>
+
+    <ul>
+      <li>display: grid</li>
+      <li>grid-template-columns</li>
+      <li>grid-template-rows</li>
+      <li>gap</li>
+      <li>grid-column</li>
+      <li>grid-row</li>
+    </ul>
+
+    <h3>Basic Grid Structure</h3>
+
+    <div class="grid-container">
+
+      <div class="grid-item">Item 1</div>
+      <div class="grid-item">Item 2</div>
+      <div class="grid-item">Item 3</div>
+      <div class="grid-item">Item 4</div>
+      <div class="grid-item">Item 5</div>
+      <div class="grid-item">Item 6</div>
+
+    </div>
+
+  </section>
+
+  <hr />
+
+  <section>
+
+    <h2>2. Advanced Grid Concepts</h2>
+
+    <h3>fr Unit</h3>
+
+    <p>
+      The <strong>fr</strong> unit represents a fraction of available space.
+    </p>
+
+    <div class="fr-grid">
+
+      <div class="box">1fr</div>
+      <div class="box">2fr</div>
+      <div class="box">1fr</div>
+
+    </div>
+
+    <h3>repeat()</h3>
+
+    <p>
+      The repeat() function helps reduce repetitive code.
+    </p>
+
+    <div class="repeat-grid">
+
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+
+    </div>
+
+    <h3>auto-fit and auto-fill</h3>
+
+    <p>
+      These values help create responsive layouts automatically.
+    </p>
+
+    <div class="auto-grid">
+
+      <div class="card">Card 1</div>
+      <div class="card">Card 2</div>
+      <div class="card">Card 3</div>
+      <div class="card">Card 4</div>
+      <div class="card">Card 5</div>
+      <div class="card">Card 6</div>
+
+    </div>
+
+  </section>
+
+  <hr />
+
+  <section>
+
+    <h2>3. Flexbox Navigation Bar</h2>
+
+    <p>
+      Build a responsive navigation bar using Flexbox.
+    </p>
+
+    <nav class="navbar">
+
+      <div class="logo">
+        <h3>MyBrand</h3>
+      </div>
+
+      <ul class="nav-links">
+
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Contact</a></li>
+
+      </ul>
+
+      <div class="nav-buttons">
+
+        <button>Login</button>
+        <button>Sign Up</button>
+
+      </div>
+
+    </nav>
+
+  </section>
+
+  <hr />
+
+  <section>
+
+    <h2>4. Responsive Card Layout</h2>
+
+    <p>
+      Use Flexbox to create a responsive card system.
+    </p>
+
+    <div class="card-container">
+
+      <!-- CARD 1 -->
+      <article class="course-card">
+
+        <img src="https://via.placeholder.com/300x180" alt="Placeholder">
+
+        <div class="card-content">
+
+          <h3>HTML Basics</h3>
+
+          <p>
+            Learn the fundamentals of HTML structure and semantic tags.
+          </p>
+
+          <button>Read More</button>
+
+        </div>
+
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="course-card">
+
+        <img src="https://via.placeholder.com/300x180" alt="Placeholder">
+
+        <div class="card-content">
+
+          <h3>CSS Fundamentals</h3>
+
+          <p>
+            Understand selectors, box model, spacing and positioning.
+          </p>
+
+          <button>Read More</button>
+
+        </div>
+
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="course-card">
+
+        <img src="https://via.placeholder.com/300x180" alt="Placeholder">
+
+        <div class="card-content">
+
+          <h3>JavaScript Essentials</h3>
+
+          <p>
+            Learn variables, functions, loops and DOM manipulation.
+          </p>
+
+          <button>Read More</button>
+
+        </div>
+
+      </article>
+
+      <!-- CARD 4 -->
+      <article class="course-card">
+
+        <img src="https://via.placeholder.com/300x180" alt="Placeholder">
+
+        <div class="card-content">
+
+          <h3>Responsive Design</h3>
+
+          <p>
+            Create websites that adapt beautifully to all screen sizes.
+          </p>
+
+          <button>Read More</button>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+  <hr />
+
+  <section>
+
+    <h2>5. Dashboard Layout using Grid</h2>
+
+    <p>
+      Build a professional dashboard layout using CSS Grid.
+    </p>
+
+    <div class="dashboard">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+
+        <h3>Dashboard</h3>
+
+        <ul>
+
+          <li>Overview</li>
+          <li>Analytics</li>
+          <li>Users</li>
+          <li>Messages</li>
+          <li>Settings</li>
+
+        </ul>
+
+      </aside>
+
+      <!-- HEADER -->
+      <header class="dashboard-header">
+
+        <h2>Admin Dashboard</h2>
+
+        <div class="profile">
+
+          <img src="https://via.placeholder.com/50" alt="User">
+
+          <span>Admin User</span>
+
+        </div>
+
+      </header>
+
+      <!-- MAIN CONTENT -->
+      <main class="dashboard-main">
+
+        <!-- STATS -->
+        <section class="stats-container">
+
+          <div class="stat-card">
+
+            <h3>Users</h3>
+            <p>1,250</p>
+
+          </div>
+
+          <div class="stat-card">
+
+            <h3>Revenue</h3>
+            <p>$12,000</p>
+
+          </div>
+
+          <div class="stat-card">
+
+            <h3>Orders</h3>
+            <p>320</p>
+
+          </div>
+
+          <div class="stat-card">
+
+            <h3>Growth</h3>
+            <p>18%</p>
+
+          </div>
+
+        </section>
+
+        <!-- TABLE -->
+        <section class="table-section">
+
+          <h3>Recent Orders</h3>
+
+          <table border="1" cellpadding="10">
+
+            <thead>
+
+              <tr>
+                <th>ID</th>
+                <th>Customer</th>
+                <th>Status</th>
+                <th>Amount</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>#001</td>
+                <td>John Doe</td>
+                <td>Completed</td>
+                <td>$250</td>
+              </tr>
+
+              <tr>
+                <td>#002</td>
+                <td>Jane Smith</td>
+                <td>Pending</td>
+                <td>$180</td>
+              </tr>
+
+              <tr>
+                <td>#003</td>
+                <td>Michael Lee</td>
+                <td>Shipped</td>
+                <td>$420</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </section>
+
+      </main>
+
+    </div>
+
+  </section>
+
+  <hr />
+
+  </section>
+
+  <hr />
+
+  <hr />
+
+  <footer>
+
+    <p>
+      End of CSS Layout Techniques Class
+    </p>
+
+  </footer>
+
+</body>
+</html>
