@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form | ATTRIBUTES</title>
+</head>
+<body>
+    <h1>HTML Forms</h1>
+    <p>
+        Forms are essential for gathering user input on a webpage, such as login credentials,
+         search queries, or feedback.<br>
+        HTML forms are made up of various input elements that collect different types of data.<br> 
+        Let's dive into how to structure forms and work with input elements.
+    </p>
+    <h2>
+        Structures of a Form
+    </h2>
+    <p>
+        
+     A form in HTML is created using the `form` tag, which acts as a container for all input elements.
+     Forms usually include input fields, labels, buttons, and other elements.
+    </p>
+    <h3>Example</h3>
+    <h4>Input Tag</h4>
+    <form action="contact.html" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required><br>
+  
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required><br>
+  
+        <button type="submit">Login</button>
+    </form>
+
+    <h4>Textarea Tag</h4>
+    <form action="/submit" method="POST">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="10" cols="50" maxlength="200" placeholder="Write your message here..." required></textarea><br>
+  
+        <button type="submit">Send Message</button>
+    </form>
+
+    <h4> Select Tag</h4>
+    <form action="/submit" method="POST">
+        <label for="country">Choose your country:</label>
+            <select id="country" name="country" required>
+                <option value="us">United States</option>
+                <option value="uk">United Kingdom</option>
+                <option value="ca">Canada</option>
+                <option Value="ng">Nigeria</option>
+                <option value="gh">Ghana</option>
+            </select>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h4>Button Tag</h4>
+    <form action="/submit" method="POST">
+        <button type="submit">Submit</button>
+    </form>
+
+    <h4>Pattern Attribute</h4>
+    <form action="/submit" method="POST">
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>
