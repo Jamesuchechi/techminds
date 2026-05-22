@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Transitions & Animations Lesson</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hero">
+    <h1>CSS Transitions, Animations & Keyframes</h1>
+    <p>
+        Learn how to bring web pages to life using smooth effects,
+        movement, and custom animation steps.
+    </p>
+</header>
+
+
+<!-- TRANSITION SECTION -->
+<section class="card fade-in">
+    <h2>1. CSS Transition</h2>
+
+    <p>
+        A transition makes a CSS property change smoothly from one
+        value to another. Hover over the box below.
+    </p>
+
+    <div class="box transition-box">
+        Hover Me
+    </div>
+
+<pre>
+transition: background 0.5s ease;
+</pre>
+
+</section>
+
+
+<!-- ANIMATION SECTION -->
+<section class="card fade-in delay1">
+    <h2>2. CSS Animation</h2>
+
+    <p>
+        Animations run automatically without requiring hover.
+    </p>
+
+    <div class="box animation-box">
+        Spin
+    </div>
+
+<pre>
+animation: spin 2s linear infinite;
+</pre>
+
+</section>
+
+
+<!-- KEYFRAME SECTION -->
+<section class="card fade-in delay2">
+    <h2>3. CSS Keyframes</h2>
+
+    <p>
+        Keyframes define the stages or steps of an animation.
+    </p>
+
+<pre>
+@keyframes spin{
+   from{
+      transform: rotate(0deg);
+   }
+
+   to{
+      transform: rotate(360deg);
+   }
+}
+</pre>
+
+</section>
+
+
+<footer>
+    End of CSS Animation Lesson 🎉
+</footer>
+
+</body>
+</html> 
