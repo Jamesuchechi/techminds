@@ -1079,9 +1079,7 @@ Create a simple registration form with fields for:
     <input type="radio" id="female" name="gender" value="female">
   </fieldset>
 
-  <
-
-fieldset>
+  <fieldset>
     <legend>Interests</legend>
     <label for="sports">Sports</label>
     <input type="checkbox" id="sports" name="interests" value="sports">
