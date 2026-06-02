@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS | Selectors</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <h1>
+        CSS Selectors
+    </h1>
+    <p>
+        CSS selectors are used to select the HTML elements you want to style.<br>
+        They are patterns used to select the elements you want to style.
+    </p>
+
+    <h2>
+        Types of CSS Selectors
+    </h2>
+    <ul>
+        <li>Universal Selector (*)</li>
+        <li>Type Selector (element name)</li>
+        <li>Class Selector (.class)</li>
+        <li>ID Selector (#id)</li>
+        <li>Attribute Selector ([attribute])</li>
+        <li>Pseudo-class Selector (:pseudo-class)</li>
+        <li>Pseudo-element Selector (::pseudo-element)</li>
+    </ul>
+
+    <h3>
+        Universal Selector
+    </h3>
+    <p>
+        The universal selector (*) selects all elements.
+    </p>
+    <h4>Example</h4>
+    <p>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </p>
+
+    <h3>
+        Type Selector
+    </h3>
+    <p>
+        The type selector selects all elements of a given type.
+    </p>
+    <h4>Example</h4>
+    <p>
+        p {
+            color: blue;
+        }
+    </p>
+
+    <h3>
+        Class Selector
+    </h3>
+    <p>
+        The class selector selects all elements with a specific class attribute.
+    </p>
+    <h4>Example</h4>
+    <p class="highlight">
+        .highlight {
+            background-color: yellow;
+        }
+    </p>
+
+    <h3>
+        ID Selector
+    </h3>
+    <p>
+        The ID selector selects a single element with a specific id attribute.
+    </p>
+    <h4>Example</h4>
+    <p id="unique">
+        #unique {
+            font-weight: bold;
+        }
+    </p>
+
+    <h3>
+        Attribute Selector
+    </h3>
+    <p> 
+        The attribute selector selects elements based on an attribute or attribute value.
+    </p>
+    <h4>Example</h4>
+    <p>
+        a[target="_blank"] {
+            color: red;
+        }
+    </p>
+
+    <h3>
+        Pseudo-class Selector
+    </h3>
+    <p>
+        The pseudo-class selector selects elements based on their state or position in the document.
+    </p>
+    <h4>Example</h4>
+    <p>
+        a:hover {
+            color: green;
+        }
+    </p>
+
+    <h3>
+        Pseudo-element Selector
+    </h3>
+    <p>
+        The pseudo-element selector selects and styles a part of an element.
+    </p>
+    <h4>Example</h4>
+    <p>
+        p::first-line {
+            font-weight: bold;
+        }
+    </p>
+
+</body>
+</html>
