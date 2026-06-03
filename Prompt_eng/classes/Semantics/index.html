@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Uchechi | Semantics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <div class="brand">
+                <span class="brand-mark">JU</span>
+                <div>
+                    <h1>James Uchechi</h1>
+                    <p>Software Developer &amp; Semantic HTML Enthusiast</p>
+                </div>
+            </div>
+
+            <nav aria-label="Primary navigation" class="main-nav">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="content-grid">
+            <article class="content-area">
+                <section id="hero" class="hero-card animate-rise">
+                    <div class="hero-copy">
+                        <span class="eyebrow">Semantic design for modern web</span>
+                        <h2>Understanding Semantics</h2>
+                        <p>Semantics is the study of meaning in language, programming, and user interfaces. In HTML,
+                            semantic elements communicate structure and purpose, improving accessibility, SEO, and
+                            maintainability.</p>
+                        <div class="hero-actions">
+                            <a class="button button-primary" href="#about">Learn More</a>
+                            <a class="button button-secondary" href="#contact">Get in Touch</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual" aria-hidden="true"></div>
+                </section>
+
+                <section id="about" class="panel animate-fade">
+                    <div class="panel-heading">
+                        <h3>About Semantics</h3>
+                        <p>Semantic HTML uses meaningful tags to describe the role of each element, making content
+                            easier to read for people and machines.</p>
+                    </div>
+                    <div class="panel-body">
+                        <div class="text-block">
+                            <p>Semantic elements such as <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, and
+                                <code>&lt;article&gt;</code> improve readability and accessibility. They also help
+                                search engines and assistive technologies understand your page structure.</p>
+                            <p>When code communicates intent, users enjoy a faster, more intuitive experience and
+                                developers benefit from cleaner, easier-to-maintain code.</p>
+                        </div>
+                        <figure class="profile-card">
+                            <img src="../../../images/test1.png" alt="Profile illustration of James Uchechi">
+                            <figcaption>James Uchechi — web developer, UX advocate, and semantic HTML supporter.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <section class="panel panel-list animate-fade">
+                    <h3>Semantic HTML Examples</h3>
+                    <ul>
+                        <li><strong>&lt;header&gt;</strong> — Introductory content or navigation.</li>
+                        <li><strong>&lt;nav&gt;</strong> — Main navigation links.</li>
+                        <li><strong>&lt;article&gt;</strong> — Standalone content item.</li>
+                        <li><strong>&lt;section&gt;</strong> — Thematically grouped content.</li>
+                        <li><strong>&lt;footer&gt;</strong> — Page or section closing content.</li>
+                    </ul>
+                </section>
+
+                <section id="services" class="panel service-grid animate-rise">
+                    <h3>Services</h3>
+                    <div class="service-item">
+                        <h4>Web Development</h4>
+                        <p>Build responsive, accessible websites using modern HTML, CSS, and JavaScript.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>Mobile App Design</h4>
+                        <p>Create polished mobile experiences with thoughtful UI and performance in mind.</p>
+                    </div>
+                    <div class="service-item">
+                        <h4>UI/UX Consulting</h4>
+                        <p>Improve user flows and visual clarity with interface design that supports real goals.</p>
+                    </div>
+                </section>
+
+                <section class="panel animate-fade">
+                    <h3>Testimonials</h3>
+                    <blockquote>"James is an exceptional developer who consistently delivers high-quality work. He is a
+                        great communicator and a pleasure to work with." — Client A</blockquote>
+                    <blockquote>"Working with James was seamless. His attention to detail and dedication make him a
+                        valuable team member." — Colleague B</blockquote>
+                </section>
+
+                <section class="panel links-panel animate-fade">
+                    <h3>Recent Writing</h3>
+                    <ul>
+                        <li><a href="blog_post_1.html">Understanding JavaScript Closures</a></li>
+                        <li><a href="blog_post_2.html">A Guide to Responsive Web Design</a></li>
+                        <li><a href="blog_post_3.html">Getting Started with React</a></li>
+                    </ul>
+                </section>
+            </article>
+
+            <aside class="sidebar">
+                <section class="panel animate-rise">
+                    <h3>Contact</h3>
+                    <p>Reach out for project inquiries, collaboration, and custom web solutions.</p>
+                    <ul class="contact-list">
+                        <li><strong>Email</strong><a
+                                href="mailto:james.uchechi@example.com">james.uchechi@example.com</a></li>
+                        <li><strong>Phone</strong><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                    </ul>
+                </section>
+
+                <section id="contact" class="panel animate-fade">
+                    <h3>Send a Message</h3>
+                    <form action="#" method="post" class="contact-form">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project"
+                            required></textarea>
+
+                        <button type="submit" class="button button-primary">Send Message</button>
+                    </form>
+                </section>
+
+                <section class="panel animate-fade">
+                    <h3>Related Links</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="#">Semantic HTML Guide</a></li>
+                        <li><a href="#">Web Accessibility Resources</a></li>
+                        <li><a href="#">SEO Best Practices</a></li>
+                    </ul>
+                </section>
+            </aside>
+        </main>
+
+        <footer class="site-footer">
+            <p>&copy; 2025 James Uchechi. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
