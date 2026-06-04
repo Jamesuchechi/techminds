@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive CSS Box Model Tutorial</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+
+<div class="container">
+    <header>
+        <h1>CSS Box Model Interactive Guide</h1>
+        <p>Visualise and master how margins, borders, padding, and content sizes interact.</p>
+    </header>
+
+    <div class="grid">
+        <!-- Column 1: Controls and Calculations -->
+        <div class="card">
+            <h2>1. Adjust Box Properties</h2>
+            
+            <div class="control-group">
+                <label for="boxSizingSelect">box-sizing:</label>
+                <select id="boxSizingSelect">
+                    <option value="content-box">content-box (Default)</option>
+                    <option value="border-box">border-box (Recommended)</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="widthRange">width:</label>
+                <input type="range" id="widthRange" min="50" max="250" value="150">
+                <span class="value-display" id="widthVal">150px</span>
+            </div>
+
+            <div class="control-group">
+                <label for="heightRange">height:</label>
+                <input type="range" id="heightRange" min="50" max="250" value="150">
+                <span class="value-display" id="heightVal">150px</span>
+            </div>
+
+            <div class="control-group">
+                <label for="paddingRange">padding:</label>
+                <input type="range" id="paddingRange" min="0" max="50" value="20">
+                <span class="value-display" id="paddingVal">20px</span>
+            </div>
+
+            <div class="control-group">
+                <label for="borderRange">border-width:</label>
+                <input type="range" id="borderRange" min="0" max="30" value="10">
+                <span class="value-display" id="borderVal">10px</span>
+            </div>
+
+            <div class="control-group">
+                <label for="marginRange">margin:</label>
+                <input type="range" id="marginRange" min="0" max="50" value="20">
+                <span class="value-display" id="marginVal">20px</span>
+            </div>
+
+            <h2>2. Generated CSS</h2>
+            <pre>
+                <code>.box {
+                    <span class="property">box-sizing</span>: <span class="value" id="cssBoxSizing">content-box</span>;
+                    <span class="property">width</span>: <span class="value" id="cssWidth">150px</span>;
+                    <span class="property">height</span>: <span class="value" id="cssHeight">150px</span>;
+                    <span class="property">padding</span>: <span class="value" id="cssPadding">20px</span>;
+                    <span class="property">border</span>: <span class="value" id="cssBorder">10px solid #ffd54f</span>;
+                    <span class="property">margin</span>: <span class="value" id="cssMargin">20px</span>;
+                    }
+                </code>
+            </pre>
+        </div>
+
+        <!-- Column 2: Visualiser and Breakdown -->
+        <div class="card">
+            <h2>3. Live Visualiser</h2>
+            
+            <div class="legend">
+                <div class="legend-item"><div class="color-box" style="background: var(--margin-color);"></div> Margin</div>
+                <div class="legend-item"><div class="color-box" style="background: var(--border-color);"></div> Border</div>
+                <div class="legend-item"><div class="color-box" style="background: var(--padding-color);"></div> Padding</div>
+                <div class="legend-item"><div class="color-box" style="background: var(--content-color);"></div> Content</div>
+            </div>
+
+            <div class="box-model-diagram">
+                <!-- Outer wrapper tracking margin simulation -->
+                <div id="visualMargin" class="visual-margin">
+                    <!-- Wrapper tracking border simulation -->
+                    <div id="visualBorder" class="visual-border">
+                        <!-- Actual target element displaying padding & content -->
+                        <div id="demoElement" class="demo-element"></div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>4. Real Calculated Dimensions</h2>
+            <div class="report-box">
+                <p>Total Element Width space on page: <span class="highlight" id="totalWidth">210px</span></p>
+                <p>Total Element Height space on page: <span class="highlight" id="totalHeight">210px</span></p>
+                <p id="boxSizingExplanation" class="comment" style="margin-top: 10px; font-size: 14px;"></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

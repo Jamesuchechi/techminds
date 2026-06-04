@@ -1,0 +1,125 @@
+/*
+   GENERAL STYLIN */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+    padding: 30px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h1,
+h2,
+h3 {
+    margin-bottom: 15px;
+}
+
+p,
+li {
+    margin-bottom: 10px;
+}
+
+
+/*
+   BOX MODEL EXAMPLE */
+
+.box-model {
+    background-color: white;
+    width: 350px;
+
+    /* Box Model Properties */
+    padding: 20px;
+    border: 4px solid royalblue;
+    margin-top: 20px;
+}
+
+
+
+.border-solid,
+.border-dashed,
+.border-dotted,
+.border-double {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.border-solid {
+    border: 3px solid black;
+}
+
+.border-dashed {
+    border: 3px dashed green;
+}
+
+.border-dotted {
+    border: 3px dotted red;
+}
+
+.border-double {
+    border: 6px double purple;
+}
+
+
+
+.shadow-box {
+    background-color: white;
+    width: 350px;
+    padding: 20px;
+    border: 1px solid #ccc;
+
+    /* Horizontal Vertical Blur Color */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.margin-box {
+    background-color: #ffe082;
+    margin: 30px;
+    padding: 20px;
+}
+
+.border-box {
+    background-color: #ffb74d;
+    border: 8px solid #f57c00;
+    padding: 20px;
+}
+
+.padding-box {
+    background-color: #81c784;
+    padding: 20px;
+}
+
+.content-box {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+.practice-card {
+    background-color: white;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.practice-card:hover,
+.shadow-box:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
