@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live DOM Lesson</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .highlight {
+      color: crimson;
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #0077ff;
+      color: white;
+      margin: 15px 0;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 10px;
+      margin: 5px 0;
+      background: #eee;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    li:hover {
+      background: #ddd;
+    }
+
+    .completed {
+      text-decoration: line-through;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 id="main-title">Welcome to JavaScript</h1>
+
+    <p id="description">
+      This is a live lesson.
+    </p>
+
+    <button id="change-btn">
+      Change Text & Color
+    </button>
+
+    <h3>Todo List</h3>
+    <ul id="todo-list"></ul>
+  </div>
+
+  <script>
+    // Select DOM elements
+    const title = document.getElementById("main-title");
+    const description = document.getElementById("description");
+    const button = document.getElementById("change-btn");
+    const list = document.getElementById("todo-list");
+
+    // Initial DOM updates
+    title.textContent = "JavaScript is Awesome!";
+    title.classList.add("highlight");
+
+    // Example of innerHTML
+    description.innerHTML =
+      "<strong>This text is bold and inserted with innerHTML.</strong>";
+
+    // Function to add todos
+    function addTodo(text) {
+      const li = document.createElement("li");
+      li.textContent = text;
+      list.appendChild(li);
+    }
+
+    // Add sample todos
+    addTodo("Learn DOM manipulation");
+    addTodo("Learn prompt engineering");
+    addTodo("Build real projects");
+
+    // Button click event
+    button.addEventListener("click", () => {
+      title.textContent = "DOM Updated Successfully!";
+      title.style.color = "blue";
+      title.style.fontSize = "2.5rem";
+
+      description.innerHTML =
+        "<em>The button was clicked and the DOM was updated.</em>";
+
+      alert("You clicked the button!");
+    });
+
+    // Event delegation for todos
+    list.addEventListener("click", (event) => {
+      if (event.target.tagName === "LI") {
+        event.target.classList.toggle("completed");
+      }
+    });
+  </script>
+
+</body>
+</html>

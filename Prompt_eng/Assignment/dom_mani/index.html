@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>JS Fundamentals Quiz</title>
+    <style>
+        :root {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #f4f7fb;
+            margin: 0
+        }
+
+        .card {
+            background: white;
+            width: 100%;
+            max-width: 640px;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 6px 24px rgba(18, 38, 63, 0.08)
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: 20px
+        }
+
+        .meta {
+            color: #556;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 16px
+        }
+
+        .question {
+            font-size: 18px;
+            margin: 16px 0
+        }
+
+        .answers {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px
+        }
+
+        button.answer {
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid #e3e7ee;
+            background: #fff;
+            cursor: pointer;
+            text-align: left
+        }
+
+        button.answer:hover {
+            background: #f6f9ff
+        }
+
+        button.answer.correct {
+            background: #e6ffed;
+            border-color: #6ee7a7
+        }
+
+        button.answer.wrong {
+            background: #ffecec;
+            border-color: #ff9a9a
+        }
+
+        .controls {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 18px;
+            gap: 8px
+        }
+
+        .secondary {
+            background: transparent;
+            border: 0;
+            color: #2b6cb0;
+            cursor: pointer
+        }
+
+        .primary {
+            background: #2b6cb0;
+            color: white;
+            border: 0;
+            padding: 10px 14px;
+            border-radius: 8px;
+            cursor: pointer
+        }
+
+        .score {
+            font-size: 18px;
+            text-align: center;
+            padding: 24px
+        }
+    </style>
+</head>
+
+<body>
+    <main class="card" role="main">
+        <h1>JavaScript Fundamentals Quiz</h1>
+        <div class="meta">
+            <div id="progress">Question 1 / 5</div>
+            <div id="score">Score: 0</div>
+        </div>
+
+        <div id="quiz">
+            <div id="question" class="question">Loading...</div>
+            <div id="answers" class="answers" aria-live="polite"></div>
+            <div class="controls">
+                <button id="nextBtn" class="primary" disabled>Next</button>
+                <button id="restartBtn" class="secondary">Restart</button>
+            </div>
+        </div>
+
+        <div id="result" class="score" hidden></div>
+    </main>
+
+    <script>
+        // 5 questions array
+        const questions = [
+            {
+                q: 'Which keyword declares a block-scoped variable in modern JavaScript?',
+                choices: ['var', 'let', 'function', 'const function'],
+                answer: 1
+            },
+            {
+                q: 'What does === check for?',
+                choices: ['Equality after type coercion', 'Strict equality (type + value)', 'Reference equality only', 'Prototype equality'],
+                answer: 1
+            },
+            {
+                q: 'Which array method returns a new array with the results of calling a provided function on every element?',
+                choices: ['forEach', 'map', 'filter', 'reduce'],
+                answer: 1
+            },
+            {
+                q: 'What is the output of `typeof null` in JavaScript?',
+                choices: ['"null"', '"object"', '"undefined"', '"number"'],
+                answer: 1
+            },
+            {
+                q: 'Which method schedules a function to run after the browser has completed other tasks (next tick)?',
+                choices: ['setInterval', 'setTimeout(fn, 0)', 'requestAnimationFrame', 'Promise.resolve().then(fn)'],
+                answer: 3
+            }
+        ];
+
+        // state
+        let current = 0;
+        let score = 0;
+        let answered = false;
+
+        // elements
+        const questionEl = document.getElementById('question');
+        const answersEl = document.getElementById('answers');
+        const progressEl = document.getElementById('progress');
+        const scoreEl = document.getElementById('score');
+        const nextBtn = document.getElementById('nextBtn');
+        const restartBtn = document.getElementById('restartBtn');
+        const resultEl = document.getElementById('result');
+
+        function renderQuestion() {
+            // reset
+            answered = false;
+            nextBtn.disabled = true;
+            answersEl.innerHTML = '';
+            resultEl.hidden = true;
+
+            const item = questions[current];
+            questionEl.textContent = item.q;
+            progressEl.textContent = `Question ${current + 1} / ${questions.length}`;
+
+            item.choices.forEach((choice, idx) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'answer';
+                btn.textContent = choice;
+                btn.dataset.index = idx;
+                btn.addEventListener('click', onAnswer);
+                answersEl.appendChild(btn);
+            });
+        }
+
+        function onAnswer(e) {
+            if (answered) return;
+            answered = true;
+            const selected = Number(e.currentTarget.dataset.index);
+            const correct = questions[current].answer;
+
+            // mark buttons
+            Array.from(answersEl.children).forEach(btn => {
+                const idx = Number(btn.dataset.index);
+                btn.disabled = true;
+                if (idx === correct) btn.classList.add('correct');
+                if (idx === selected && idx !== correct) btn.classList.add('wrong');
+            });
+
+            if (selected === correct) {
+                score += 1;
+                scoreEl.textContent = `Score: ${score}`;
+            }
+
+            // enable next or finish
+            nextBtn.disabled = false;
+            if (current === questions.length - 1) {
+                nextBtn.textContent = 'Finish';
+            } else {
+                nextBtn.textContent = 'Next';
+            }
+        }
+
+        function showResult() {
+            quizHidden(true);
+            resultEl.hidden = false;
+            resultEl.innerHTML = `You scored ${score} / ${questions.length}`;
+        }
+
+        function quizHidden(hidden) {
+            document.getElementById('quiz').hidden = hidden;
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (!answered && current !== questions.length - 1) return; // guard
+
+            if (current < questions.length - 1) {
+                current += 1;
+                renderQuestion();
+            } else {
+                // finished
+                showResult();
+            }
+        });
+
+        restartBtn.addEventListener('click', () => {
+            current = 0;
+            score = 0;
+            scoreEl.textContent = `Score: ${score}`;
+            quizHidden(false);
+            nextBtn.disabled = true;
+            renderQuestion();
+        });
+
+        // initial render
+        renderQuestion();
+    </script>
+</body>
+
+</html>
