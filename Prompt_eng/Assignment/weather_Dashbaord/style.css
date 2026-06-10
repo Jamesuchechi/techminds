@@ -1,0 +1,493 @@
+/* ================================================================
+   WEATHERSCOPE — STYLESHEET
+   Sections:
+   1. Reset & base
+   2. Layout & wrapper
+   3. Header
+   4. Search bar
+   5. Suggestions dropdown
+   6. Popular chips
+   7. Weather card
+   8. Stats grid
+   9. Forecast strip
+   10. No-result panel
+   11. Animations
+   12. Responsive (mobile)
+================================================================ */
+
+
+/* ── 1. RESET & BASE ───────────────────────────────────────────── */
+
+/* Remove default browser spacing and enforce box model */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Root font and background — dark navy theme */
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e2e8f0;           /* light grey text */
+  background: #0b1120;      /* very dark navy */
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+
+/* ── 2. LAYOUT & WRAPPER ───────────────────────────────────────── */
+
+/* Centered column, max 680px wide */
+.app-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+
+/* ── 3. HEADER ─────────────────────────────────────────────────── */
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Big weather emoji above the title */
+.header-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.header-subtitle {
+  font-size: 0.9rem;
+  color: #64748b;   /* muted slate */
+  margin-top: 4px;
+}
+
+
+/* ── 4. SEARCH BAR ─────────────────────────────────────────────── */
+
+.search-section {
+  position: relative;   /* anchor for the absolute dropdown */
+  margin-bottom: 1rem;
+}
+
+/* Row containing the input wrapper + button */
+.search-row {
+  display: flex;
+  gap: 10px;
+}
+
+/* Wraps the icon + input so icon overlays the input */
+.search-input-wrap {
+  position: relative;
+  flex: 1;
+}
+
+/* Magnifying glass icon inside the input */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;   /* icon is decorative — not clickable */
+}
+
+/* The actual text input */
+#searchInput {
+  width: 100%;
+  padding: 12px 14px 12px 42px;   /* left padding makes room for icon */
+  background: #1e293b;            /* dark surface */
+  border: 1px solid #334155;
+  border-radius: 10px;
+  color: #e2e8f0;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#searchInput::placeholder {
+  color: #475569;
+}
+
+/* Highlight border on focus */
+#searchInput:focus {
+  border-color: #60a5fa;   /* blue glow */
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.15);
+}
+
+/* Search button */
+.btn-search {
+  padding: 12px 22px;
+  background: #2563eb;    /* primary blue */
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-search:hover {
+  background: #1d4ed8;
+}
+
+/* Slight press effect on click */
+.btn-search:active {
+  transform: scale(0.97);
+}
+
+
+/* ── 5. SUGGESTIONS DROPDOWN ───────────────────────────────────── */
+
+.suggestions {
+  position: absolute;
+  top: calc(100% + 4px);  /* just below the search row */
+  left: 0;
+  right: 0;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  list-style: none;
+  z-index: 100;           /* float above other content */
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Each suggestion item */
+.suggestions li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  border-bottom: 1px solid #263148;
+  transition: background 0.15s;
+}
+
+.suggestions li:last-child {
+  border-bottom: none;
+}
+
+.suggestions li:hover {
+  background: #263148;
+  color: #ffffff;
+}
+
+/* Country label pushed to the right */
+.suggestions li .sug-country {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: #475569;
+}
+
+
+/* ── 6. POPULAR CITY CHIPS ─────────────────────────────────────── */
+
+.popular-section {
+  margin-bottom: 1.5rem;
+}
+
+.popular-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+/* Flex row that wraps on small screens */
+.chips-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Individual chip button */
+.chip {
+  padding: 5px 14px;
+  border-radius: 9999px;    /* pill shape */
+  border: 1px solid #334155;
+  background: transparent;
+  color: #94a3b8;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  font-family: inherit;
+}
+
+.chip:hover {
+  background: #1e293b;
+  border-color: #60a5fa;
+  color: #e2e8f0;
+}
+
+/* Active/selected chip */
+.chip.active {
+  background: #1e40af;
+  border-color: #3b82f6;
+  color: #bfdbfe;
+}
+
+
+/* ── 7. WEATHER CARD ───────────────────────────────────────────── */
+
+.weather-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 0.3s ease;   /* smooth entry */
+}
+
+/* Two-column top: city details left, big temp right */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+/* City name — large and prominent */
+.city-name {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  margin-bottom: 2px;
+}
+
+/* Country, coordinates, timezone */
+.city-meta {
+  font-size: 0.82rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* Slightly different color for timezone */
+.timezone {
+  color: #475569;
+}
+
+/* Big temperature number on the right */
+.temp-big {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  line-height: 1;
+  text-align: right;
+}
+
+/* Feels-like line below the big temp */
+.feels-like {
+  font-size: 0.8rem;
+  color: #64748b;
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* Row showing the weather condition badge + high/low */
+.condition-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #263148;
+}
+
+/* Large condition emoji */
+.cond-icon {
+  font-size: 1.6rem;
+}
+
+/* Coloured badge (e.g. "Partly Cloudy") */
+.cond-badge {
+  background: rgba(96, 165, 250, 0.12);
+  color: #93c5fd;
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 0.83rem;
+  font-weight: 500;
+}
+
+/* High/Low temperatures */
+.high-low {
+  margin-left: auto;
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+/* Horizontal rule between stats and forecast */
+.card-divider {
+  border: none;
+  border-top: 1px solid #263148;
+  margin: 1.2rem 0 1rem;
+}
+
+
+/* ── 8. STATS GRID ─────────────────────────────────────────────── */
+
+/* 4 equal columns */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* Each metric tile */
+.stat-item {
+  background: #0f172a;      /* slightly darker than card bg */
+  border-radius: 10px;
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: #475569;
+  margin-bottom: 6px;
+}
+
+.stat-val {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+
+/* ── 9. FORECAST STRIP ─────────────────────────────────────────── */
+
+.forecast-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+/* 5 equal columns — one per day */
+.forecast-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+/* Each forecast day card */
+.forecast-card {
+  background: #0f172a;
+  border-radius: 10px;
+  padding: 12px 8px;
+  text-align: center;
+}
+
+.fc-day {
+  font-size: 0.75rem;
+  color: #475569;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+/* Day's weather emoji */
+.fc-icon {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.fc-temp {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+
+/* ── 10. NO-RESULT PANEL ───────────────────────────────────────── */
+
+.no-result {
+  text-align: center;
+  padding: 3rem 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.no-result-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.no-result-text {
+  font-size: 1rem;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+.no-result-hint {
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+
+/* ── 11. ANIMATIONS ────────────────────────────────────────────── */
+
+/* Fade-in used by weather card and no-result panel */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Utility class — hides any element */
+.hidden {
+  display: none !important;
+}
+
+
+/* ── 12. RESPONSIVE ────────────────────────────────────────────── */
+
+/* On screens narrower than 480px, collapse stats to 2 columns */
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Stack the temperature block below city info */
+  .card-top {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .temp-big {
+    text-align: left;
+    font-size: 2.8rem;
+  }
+
+  .feels-like {
+    text-align: left;
+  }
+
+  /* Forecast: 3 visible on small screens, rest scroll */
+  .forecast-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

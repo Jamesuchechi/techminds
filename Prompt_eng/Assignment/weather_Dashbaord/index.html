@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Makes the page responsive on mobile screens -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherScope</title>
+
+    <!-- Link to our stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Font: Inter for a clean modern look -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+
+    <!-- ============================================================
+         MAIN APP WRAPPER
+         Everything lives inside this centered container
+    ============================================================ -->
+    <div class="app-wrapper">
+
+      <!-- ── HEADER ─────────────────────────────────────────── -->
+      <header class="app-header">
+        <div class="header-icon">🌤</div>
+        <h1>Weather Dashboard</h1>
+        <p class="header-subtitle">Real-time conditions for cities around the world</p>
+      </header>
+
+      <!-- ── SEARCH BAR ─────────────────────────────────────── -->
+      <section class="search-section" aria-label="City search">
+        <div class="search-row">
+          <div class="search-input-wrap">
+            <!-- The main text input where users type a city name -->
+            <span class="search-icon">🔍</span>
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Search a city… e.g. Tokyo, Paris"
+              autocomplete="off"
+              aria-label="Search city"
+            />
+          </div>
+          <!-- Triggers search on click (same as pressing Enter) -->
+          <button id="searchBtn" class="btn-search" aria-label="Search">Search</button>
+        </div>
+
+        <!-- Autocomplete dropdown — shown while user types -->
+        <ul id="suggestions" class="suggestions hidden" role="listbox" aria-label="Suggestions"></ul>
+      </section>
+
+      <!-- ── POPULAR CITY CHIPS ──────────────────────────────── -->
+      <!-- Quick-access buttons for popular cities; filled by JS -->
+      <div class="popular-section">
+        <p class="popular-label">Popular cities</p>
+        <div id="popularChips" class="chips-row"></div>
+      </div>
+
+      <!-- ── WEATHER RESULT CARD ─────────────────────────────── -->
+      <!-- Hidden by default; JS removes .hidden when a city is found -->
+      <section id="weatherCard" class="weather-card hidden" aria-live="polite">
+
+        <!-- Top row: city info left, big temperature right -->
+        <div class="card-top">
+          <div class="city-info">
+            <h2 id="cityName" class="city-name">—</h2>
+            <p id="cityCountry" class="city-meta">—</p>
+            <p id="cityCoords" class="city-meta">—</p>
+            <p id="localTime" class="city-meta timezone">—</p>
+          </div>
+          <div class="temp-block">
+            <div id="tempVal" class="temp-big">—</div>
+            <div id="feelsLike" class="feels-like">—</div>
+          </div>
+        </div>
+
+        <!-- Condition row: icon + label + high/low -->
+        <div class="condition-row">
+          <span id="condIcon" class="cond-icon" aria-hidden="true">☁️</span>
+          <span id="condBadge" class="cond-badge">—</span>
+          <span id="highLow" class="high-low">—</span>
+        </div>
+
+        <!-- Stats grid: 4 key metrics -->
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-label">💧 Humidity</div>
+            <div id="humidity" class="stat-val">—</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">💨 Wind</div>
+            <div id="wind" class="stat-val">—</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">👁 Visibility</div>
+            <div id="visibility" class="stat-val">—</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">☀️ UV Index</div>
+            <div id="uvIndex" class="stat-val">—</div>
+          </div>
+        </div>
+
+        <!-- Divider before forecast -->
+        <hr class="card-divider" />
+
+        <!-- 5-day forecast strip — filled dynamically by JS -->
+        <p class="forecast-label">5-Day Forecast</p>
+        <div id="forecastRow" class="forecast-row"></div>
+
+      </section>
+
+      <!-- ── NOT-FOUND MESSAGE ───────────────────────────────── -->
+      <!-- Shown when user searches a city not in our array -->
+      <div id="noResult" class="no-result hidden" aria-live="polite">
+        <div class="no-result-icon">🗺️</div>
+        <p id="noResultMsg" class="no-result-text">City not found.</p>
+        <p class="no-result-hint">
+          Try one of the popular cities above, or check the spelling.
+        </p>
+      </div>
+
+    </div><!-- /app-wrapper -->
+
+    <!-- Link to our JavaScript — placed at the bottom so the DOM is ready -->
+    <script src="script.js"></script>
+  </body>
+</html>
