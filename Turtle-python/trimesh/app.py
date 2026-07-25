@@ -1,4 +1,4 @@
 import trimesh
 
-c = trimesh.creation.box(extents=[1, 1, 1])
+c = trimesh.creation.box(extents=[1, 2, 4])
 c.show()

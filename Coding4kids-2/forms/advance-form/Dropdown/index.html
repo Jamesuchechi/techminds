@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input | Dropdown</title>
+</head>
+<body>
+    <h1>Dropdown</h1>
+    <p>Dropdowns allow users to select one option from a list.</p>
+
+    <h3>Example</h3>
+
+    <p>In this example, the user can select one option:</p>
+    <form action="">
+        <label for="cars">Choose a car:</label>
+        <select name="cars" id="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h3>Example 2</h3>
+    <p>we will create a dropdown of navigation options:</p>
+    <form action="">
+        <label for="nav">Navigate to:</label>
+        <select name="nav" id="nav">
+            <option value="home">Home</option>
+            <option value="about">About</option>
+            <option value="services">Services</option>
+            <option value="contact">Contact</option>
+        </select>
+        <input type="submit" value="Go">
+    </form>
+
+    <h3>Example 3</h3>
+    <p>In this example, we are going to create a dropdown of countries</p>
+
+    <form action="">
+        <label for="countries">Choose a country:</label>
+        <select name="countries" id="countries">
+            <option value="usa">United States</option>
+            <option value="canada">Canada</option>
+            <option value="uk">United Kingdom</option>
+            <option value="australia">Australia</option>
+            <option value="india">India</option>
+            <optgroup label="Europe">
+                <option value="france">France</option>
+                <option value="germany">Germany</option>
+                <option value="italy">Italy</option>
+                <option value="spain">Spain</option>
+            </optgroup>    
+                <optgroup label="Asia">
+                    <option value="china">China</option>
+                    <option value="japan">Japan</option>
+                    <option value="south-korea">South Korea</option>
+                    <option value="singapore">Singapore</option>
+                </optgroup>
+            </optgroup>
+        </select>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
