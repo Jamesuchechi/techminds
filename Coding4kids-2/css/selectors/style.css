@@ -1,0 +1,49 @@
+/* Element Selectors */
+
+body{
+    font-family: Arial, sans-serif;
+    background:#120707e3;
+    color:white;
+    align-content: center;
+    text-align: center;
+    padding:40px;
+}
+
+h1{
+    color: white;
+}
+
+h2{
+    color:darkgreen;
+}
+
+p{
+    color:#f3e9e9;
+    font-size:68px;
+    line-height:1.6;
+}
+
+/* Class Selector */
+
+.btn{
+    background:green;
+    color:white;
+    padding:18px 24px;
+    border:none;
+    border-radius:50%;
+    margin-right:10px;
+    cursor: pointer;
+}
+
+/* Additional Class */
+
+.special{
+    background:orange;
+}
+
+/* ID Selector */
+
+#fun{
+    color:yellow;
+    font-size: 48px;
+}
